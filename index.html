@@ -10,6 +10,7 @@
 </head>
 
 <body>
+   <button id="openNcloseBtn">關閉</button>
     <video id="preview"></video>
     <section>
         <div style="margin-top: 20px">
@@ -19,6 +20,19 @@
         </div>
     </section>
     <script type="text/javascript">
+        const toggleCammera = document.querySelector("#openNcloseBtn");
+        let toggle = false;
+        toggleCammera.onclick = () => {
+            if(toggle) {
+                document.querySelector("#preview").style.display = 'block';
+                toggleCammera.innerHTML = '關閉';
+                toggle = false;
+            } else {
+                document.querySelector("#preview").style.display = 'none';
+                toggleCammera.innerHTML = '開啟';
+                toggle = true;
+            }
+        }
         const resultShow = document.querySelector("#result")
         const copyBtn = document.querySelector("#copyBtn")
         
